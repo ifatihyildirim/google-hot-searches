@@ -6,6 +6,8 @@ import './styles.css';
 
 const randomColor = require('randomcolor');
 
+const colors = ['#4285F4', '#DB4437', '#F4B400', '#0F9D58'];
+
 class SeachBox extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,12 @@ class SeachBox extends Component {
 
   componentDidMount() {
     this.random();
+  }
+
+  randomColor = () => {
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    return color;
   }
 
   random = () => {
@@ -27,11 +35,10 @@ class SeachBox extends Component {
   render() {
     const { row } = this.props;
     const { text } = this.state;
-    const color = randomColor({ luminosity: 'light' }); // a hex code for an attractive color
 
     const colStyle = {
       height: `calc(100vh / ${row})`,
-      backgroundColor: color,
+      backgroundColor: this.randomColor(),
     };
 
     if (text === null) {
