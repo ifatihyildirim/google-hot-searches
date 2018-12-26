@@ -1,4 +1,13 @@
-.typewriter span {
-  color: #000;
-  font-family: monospace;
+.typewriter > div {
+  color: #ffffff;
+  font-size: 2em;
+  font-family: Sans-Serif;
+  align-items: center;  
+}
+
+.typewriter {
+  padding: 0 15px;
+  display: flex;
+  align-items: center !important;
+  align-content: center !important;
 }
