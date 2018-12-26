@@ -25,10 +25,12 @@ class SeachBox extends Component {
   }
 
   render() {
+    const { row } = this.props;
     const { text } = this.state;
     const color = randomColor({ luminosity: 'light' }); // a hex code for an attractive color
 
     const colStyle = {
+      height: `calc(100vh / ${row})`,
       backgroundColor: color,
     };
 
@@ -38,14 +40,12 @@ class SeachBox extends Component {
 
     return (
       <Col style={colStyle} className="typewriter" md={3}>
-        <span>
-          <Typing
-            onTypingDone={() => {
-              setTimeout(() => this.random(), 300);
-            }}
-            text={text}
-          />
-        </span>
+        <Typing
+          onTypingDone={() => {
+            this.random();
+          }}
+          text={text}
+        />
       </Col>
     );
   }
@@ -53,6 +53,7 @@ class SeachBox extends Component {
 
 SeachBox.propTypes = {
   data: PropTypes.array.isRequired,
+  row: PropTypes.number.isRequired,
 };
 
 export default SeachBox;

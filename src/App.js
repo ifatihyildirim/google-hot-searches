@@ -18,7 +18,7 @@ class App extends Component {
     const boxes = [];
 
     for (i = 0; i < (row * column); i += 1) {
-      boxes.push(<SearchBox key={i} data={array} />);
+      boxes.push(<SearchBox row={row} key={i} data={array} />);
     }
 
     return boxes;
