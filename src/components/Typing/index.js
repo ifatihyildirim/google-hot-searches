@@ -21,8 +21,6 @@ class Typing extends PureComponent {
 
   static getDerivedStateFromProps(props, state) {
     if (props.text !== state.text) {
-      console.log(props.text);
-
       return {
         text: props.text,
         typing: true,
@@ -33,8 +31,7 @@ class Typing extends PureComponent {
 
 
   done = () => {
-    this.props.onTypingDone();
-    this.setState({ typing: false });
+    this.setState({ typing: false }, () => setTimeout(() => this.props.onTypingDone(), 500));
   }
 
   render() {
@@ -44,7 +41,15 @@ class Typing extends PureComponent {
       return null;
     }
 
-    return <Typist avgTypingDelay={200} onTypingDone={this.done}>{text}</Typist>;
+    return (
+      <Typist
+        avgTypingDelay={200}
+        onTypingDone={this.done}
+        cursor={{ show: false }}
+      >
+        {`${text} ${text} ${text}`}
+      </Typist>
+    );
   }
 }
 
