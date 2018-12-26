@@ -38,7 +38,7 @@ class Typing extends PureComponent {
     const { typing, text } = this.state;
 
     if (!typing) {
-      return null;
+      return <div>{text}</div>;
     }
 
     return (
@@ -47,7 +47,7 @@ class Typing extends PureComponent {
         onTypingDone={this.done}
         cursor={{ show: false }}
       >
-        {`${text} ${text} ${text}`}
+        {text}
       </Typist>
     );
   }
