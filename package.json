@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "prop-types": "^15.6.2",
-    "randomcolor": "^0.5.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-flexbox-grid": "^2.1.2",

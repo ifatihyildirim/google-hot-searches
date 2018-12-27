@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import Typing from '../Typing';
 import './styles.css';
 
-const randomColor = require('randomcolor');
-
 const colors = ['#4285F4', '#DB4437', '#F4B400', '#0F9D58'];
 
 class SeachBox extends Component {
